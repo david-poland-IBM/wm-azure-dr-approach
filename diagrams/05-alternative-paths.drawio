@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio">
+  <diagram name="Architecture">
+    <mxGraphModel grid="1" gridSize="10" page="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2" value="&lt;b&gt;DR options — IS, UM, MWS, Azure SQL Database and Key Vault&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;text;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="0" width="900" height="35" />
+        </mxCell>
+        <mxCell id="c3" value="Backup-restore (cold)" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;rounded=0;fillColor=#ffffff;strokeColor=#333333;align=center;verticalAlign=middle;spacingLeft=0;spacingTop=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="60" width="215" height="65" />
+        </mxCell>
+        <mxCell id="c4" value="RPO: hours&lt;br&gt;RTO: 4–24 h" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="145" width="215" height="60" />
+        </mxCell>
+        <mxCell id="c5" value="Cost: Lowest" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;text;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;spacing=5;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="225" width="215" height="35" />
+        </mxCell>
+        <mxCell id="c6" value="For non-critical workloads" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;text;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;spacing=5;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="275" width="215" height="50" />
+        </mxCell>
+        <mxCell id="c7" value="Pilot light" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;rounded=0;fillColor=#ffffff;strokeColor=#333333;align=center;verticalAlign=middle;spacingLeft=0;spacingTop=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="255" y="60" width="215" height="65" />
+        </mxCell>
+        <mxCell id="c8" value="RPO: minutes&lt;br&gt;RTO: 1–2 h" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="255" y="145" width="215" height="60" />
+        </mxCell>
+        <mxCell id="c9" value="Cost: Low" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;text;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;spacing=5;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="255" y="225" width="215" height="35" />
+        </mxCell>
+        <mxCell id="c10" value="For batch-oriented integration" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;text;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;spacing=5;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="255" y="275" width="215" height="50" />
+        </mxCell>
+        <mxCell id="c11" value="&lt;b&gt;Warm standby&lt;br&gt;(this design)&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;align=center;verticalAlign=middle;spacingLeft=0;spacingTop=0;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="490" y="60" width="215" height="65" />
+        </mxCell>
+        <mxCell id="c12" value="RPO: seconds–20 min&lt;br&gt;RTO: 30–60 min" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="490" y="145" width="215" height="60" />
+        </mxCell>
+        <mxCell id="c13" value="Cost: Medium" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;text;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;spacing=5;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="490" y="225" width="215" height="35" />
+        </mxCell>
+        <mxCell id="c14" value="For business-critical integration" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;text;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;spacing=5;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="490" y="275" width="215" height="50" />
+        </mxCell>
+        <mxCell id="c15" value="VMs + Site Recovery" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;rounded=0;fillColor=#ffffff;strokeColor=#333333;align=center;verticalAlign=middle;spacingLeft=0;spacingTop=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="725" y="60" width="215" height="65" />
+        </mxCell>
+        <mxCell id="c16" value="RPO: minutes&lt;br&gt;RTO: 30–60 min" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="725" y="145" width="215" height="60" />
+        </mxCell>
+        <mxCell id="c17" value="Cost: Medium" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;text;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;spacing=5;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="725" y="225" width="215" height="35" />
+        </mxCell>
+        <mxCell id="c18" value="For existing VM installations" style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;text;fillColor=#ffffff;strokeColor=none;align=left;verticalAlign=middle;spacing=5;align=center;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="725" y="275" width="215" height="50" />
+        </mxCell>
+        <mxCell id="c19" value="&lt;b&gt;UM recovery:&lt;/b&gt; one active realm; one standby realm per DR region. Realm data is recovered from replicated NetApp Files. In the AKS paths, UM is a single-replica StatefulSet behind a headless Service." style="whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#111111;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;spacingLeft=6;spacingTop=5;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="355" width="920" height="65" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

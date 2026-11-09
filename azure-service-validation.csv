@@ -1,0 +1,15 @@
+Azure service,Supports,Capability relied on,Status,Notes,Microsoft doc
+Azure regions,All,"Australia East 3 AZs paired with Australia Southeast (no AZs); NZ North 3 AZs, no pair; North/West Europe 3 AZs each",Confirmed,,https://learn.microsoft.com/en-us/azure/reliability/regions-list
+Azure SQL Database,"IS, MWS","Auto-failover group, listener, async geo-replication",Confirmed (standard feature),,https://learn.microsoft.com/en-us/azure/azure-sql/database/failover-group-sql-db
+Azure Key Vault,"IS, UM, MWS",Backup/restore within same subscription + geography; Microsoft-managed paired failover best-effort,Confirmed,"Two vaults, pipeline-written",https://learn.microsoft.com/en-us/azure/reliability/reliability-key-vault
+Azure NetApp Files,UM,Cross-region replication incl. Australia East <-> Southeast,Confirmed,Check NZ North pair separately,https://learn.microsoft.com/en-us/azure/azure-netapp-files/replication
+Azure NetApp Files on AKS,UM,NFS volumes via Trident CSI,Confirmed,,https://learn.microsoft.com/en-us/azure/aks/azure-netapp-files
+Azure NetApp Files static PV on AKS,UM,Statically provisioned PV/PVC bound to an existing ANF volume (DR replication destination),Confirmed,PVC named um-data-um-0 to match the StatefulSet claim,https://learn.microsoft.com/en-us/azure/aks/azure-netapp-files-nfs
+Azure Files (SSD),UM,Cross-region replication,Not available,LRS/ZRS only; not used for UM,https://learn.microsoft.com/en-us/azure/storage/files/files-redundancy
+AKS,"IS, UM, MWS",User pool scale to 0; scale-down mode Deallocate,Confirmed,Not with ephemeral OS / Spot,https://learn.microsoft.com/en-us/azure/aks/scale-down-mode
+AKS headless Service / StatefulSet DNS,"IS, UM",Headless Service gives the single UM StatefulSet pod a stable per-pod DNS name for IS-to-UM traffic,Confirmed,No external UM clients; identical pod DNS name in both clusters,https://kubernetes.io/docs/concepts/services-networking/service/#headless-services
+Azure Backup for AKS,"IS, UM, MWS",Vault tier + cross-region restore (paired region),Confirmed,Cold path only,https://learn.microsoft.com/en-us/azure/backup/tutorial-restore-aks-backups-across-regions
+Azure Container Registry Premium,"IS, UM, MWS","Geo-replication, single FQDN",Confirmed (standard feature),,https://learn.microsoft.com/en-us/azure/container-registry/container-registry-geo-replication
+Azure Front Door Premium,"IS, MWS","Global HTTPS for IS/MWS, WAF, Private Link origins",Confirmed (standard feature),IS/MWS HTTPS only,https://learn.microsoft.com/en-us/azure/frontdoor/private-link
+Private endpoints / Private DNS,"Azure SQL Database, Key Vault, ACR","Endpoints per region, DNS zones linked to both hubs",Confirmed (design required),,https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns
+Azure Site Recovery,"IS, UM, MWS (VM path)",VM replication for IaaS alternative,Not re-verified,Check OS support matrix,https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-support-matrix
